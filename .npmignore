@@ -1,0 +1,4 @@
+# .npmignore
+
+$*.ts # Ignore TS files
+!*.d.ts # Allow .d.ts files
