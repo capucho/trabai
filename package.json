@@ -6,10 +6,13 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "npm run format && npm run lint && tsc",
-    "prepublish": "tsc",
     "test": "jest",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "files": ["lib"],
   "repository": {
