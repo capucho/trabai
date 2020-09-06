@@ -41,19 +41,19 @@ const fileToJson = (rawJson: string | Buffer) => JSON.parse(rawJson.toString());
 /**
  * Impure Function
  */
-const readTomateData: FileReaderBuilder = (path: string): Reader => (): Data =>
+const readTrabaiData: FileReaderBuilder = (path: string): Reader => (): Data =>
   fileToJson(read(path));
 
 /**
  * Impure Function
  */
-const writeTomateData: FileWriterBuilder = (path: string): Writer => (file: Data) =>
+const writeTrabaiData: FileWriterBuilder = (path: string): Writer => (file: Data) =>
   write(path, Buffer.from(JSON.stringify(file)));
 
 /**
- * Module Tomate Data
+ * Module Trabai Data
  * @param path
  */
-const dataAccess = (path: string) => ({ read: readTomateData(path), write: writeTomateData(path) });
+const dataAccess = (path: string) => ({ read: readTrabaiData(path), write: writeTrabaiData(path) });
 
 export { dataAccess };

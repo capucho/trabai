@@ -5,7 +5,7 @@ import objectContaining = jasmine.objectContaining;
 
 describe('file-storage', () => {
   afterEach(() => {
-    const path = join(__dirname, '.tomate.test.json');
+    const path = join(__dirname, '.trabai.test.json');
     // remove file if exists
     if (existsSync(path)) {
       unlinkSync(path);
@@ -13,7 +13,7 @@ describe('file-storage', () => {
   });
 
   it('should create read and write functions with path', () => {
-    expect(dataAccess(join(__dirname, '.tomate.test.json'))).toEqual(
+    expect(dataAccess(join(__dirname, '.trabai.test.json'))).toEqual(
       objectContaining({
         read: expect.any(Function),
         write: expect.any(Function),
@@ -22,7 +22,7 @@ describe('file-storage', () => {
   });
 
   it('should create file if does not exist', () => {
-    const { read } = dataAccess(join(__dirname, '.tomate.test.json'));
+    const { read } = dataAccess(join(__dirname, '.trabai.test.json'));
     const file = read();
     expect(file).toEqual({
       meta: {},
@@ -31,7 +31,7 @@ describe('file-storage', () => {
   });
 
   it('should read file if does exist and return json', () => {
-    const { read, write } = dataAccess(join(__dirname, '.tomate.test.json'));
+    const { read, write } = dataAccess(join(__dirname, '.trabai.test.json'));
     write({
       modules: {
         inbox: {},
@@ -56,7 +56,7 @@ describe('file-storage', () => {
   });
 
   it('should write over file if exists', () => {
-    const { read, write } = dataAccess(join(__dirname, '.tomate.test.json'));
+    const { read, write } = dataAccess(join(__dirname, '.trabai.test.json'));
     // create file
     write({
       modules: {

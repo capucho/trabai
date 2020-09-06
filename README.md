@@ -1,4 +1,4 @@
-# tomate
+# trabai
 Task manager, pomodoro CLI
 
 

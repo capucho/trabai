@@ -1,5 +1,5 @@
 {
-  "name": "tomate",
+  "name": "trabai",
   "version": "0.1.0",
   "description": "Task manager, pomodoro CLI",
   "main": "lib/index.js",
@@ -16,28 +16,28 @@
     "postversion": "git push && git push --tags"
   },
   "bin": {
-    "@capucho/tomate": "bin/tomate",
-    "tomate": "bin/tomate"
+    "@capucho/trabai": "bin/trabai",
+    "trabai": "bin/trabai"
   },
   "files": [
     "lib"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/capucho/tomate.git"
+    "url": "git+https://github.com/capucho/trabai.git"
   },
   "keywords": [
     "cli",
-    "tomate",
+    "trabai",
     "task-manager",
     "pomodoro"
   ],
   "author": "Joao Capucho",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/capucho/tomate/issues"
+    "url": "https://github.com/capucho/trabai/issues"
   },
-  "homepage": "https://github.com/capucho/tomate#readme",
+  "homepage": "https://github.com/capucho/trabai#readme",
   "devDependencies": {
     "@types/jest": "^26.0.13",
     "@types/yargs": "^15.0.5",

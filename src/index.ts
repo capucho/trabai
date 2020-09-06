@@ -1,6 +1,6 @@
 import * as task from './task';
 
-export interface Tomate {
+export interface Trabai {
   readonly task: task.Task;
 }
 

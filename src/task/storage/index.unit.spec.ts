@@ -10,6 +10,6 @@ jest.mock('./file-storage', () => {
 describe('create storage access', () => {
   it('should create a storage with OS home dir path', () => {
     expect(dataAccess).toHaveBeenCalledTimes(1);
-    expect(dataAccess).toHaveBeenCalledWith(`${__dirname}/.tomate.test.json`);
+    expect(dataAccess).toHaveBeenCalledWith(`${__dirname}/.trabai.test.json`);
   });
 });
