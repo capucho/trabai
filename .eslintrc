@@ -12,6 +12,8 @@
   ],
   "rules": {
     "no-console": "warn",
-    "array-bracket-newline": "warn"
+    "array-bracket-newline": "warn",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": "off"
   }
 }

@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+
+const yargs = require('yargs');
+const { task }  = require('../lib/index')
+
+const argv = yargs.usage('Usage: <command> [options]')
+    .usage('Menu options are: inbox, waiting, maybe')
+    .command({
+        command: 'read <menu>',
+        aliases: ['read', 'r'],
+        desc: 'Read your tasks',
+        builder: (yargs) => {
+            yargs.positional('menu', {
+                describe: 'Read your task menu',
+                type: 'string',
+            })
+        },
+        handler: (args) => {
+            return task.management[args.menu].read()
+        }
+    }).command({
+        command: 'add <menu> <task>',
+        aliases: ['add', 'a'],
+        desc: 'Add your tasks',
+        builder: (yargs) => {
+            yargs.positional('menu', {
+                describe: 'Add to your task menu',
+                type: 'string',
+            })
+            yargs.positional('task', {
+                describe: 'Add to your task menu',
+                type: 'string',
+            })
+        },
+        handler: (args) => {
+            task.management[args.menu].add(args.task)
+            return task.management[args.menu].read()
+        }
+    }).command({
+        command: 'remove <menu> <task>',
+        aliases: ['remove', 'r'],
+        desc: 'Remove your tasks (by id)',
+        builder: (yargs) => {
+            yargs.positional('menu', {
+                describe: 'Add to your task menu',
+                type: 'string',
+            })
+            yargs.positional('task', {
+                describe: 'Add to your task menu',
+                type: 'string',
+            })
+        },
+        handler: (args) => {
+            task.management[args.menu].remove(args.task)
+            return task.management[args.menu].read()
+        }
+    }).demandCommand().help().wrap(72).argv
+
