@@ -30,8 +30,8 @@ export type Reader = () => Data;
 
 const path =
   process.env.ENV === 'test'
-    ? join(homedir(), '.trabai.json')
-    : join(__dirname, '.trabai.test.json');
+    ? join(__dirname, '.trabai.test.json')
+    : join(homedir(), '.trabai.json');
 
 const { read, write } = dataAccess(path);
 

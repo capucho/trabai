@@ -6,8 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --silent",
-    "test:watch": "jest --silent --watch",
+    "test": "ENV=test jest --silent",
+    "test:watch": "ENV=test jest --silent --watch",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "prepublishOnly": "npm test && npm run lint",
