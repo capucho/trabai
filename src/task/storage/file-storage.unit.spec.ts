@@ -25,19 +25,17 @@ describe('file-storage', () => {
     const { read } = dataAccess(join(__dirname, '.tomate.test.json'));
     const file = read();
     expect(file).toEqual({
-      inbox: {},
-      meta: {
-        inbox: {
-          lastId: 0, //default value
-        },
-      },
+      meta: {},
+      modules: {},
     });
   });
 
   it('should read file if does exist and return json', () => {
     const { read, write } = dataAccess(join(__dirname, '.tomate.test.json'));
     write({
-      inbox: {},
+      modules: {
+        inbox: {},
+      },
       meta: {
         inbox: {
           lastId: 9999,
@@ -46,7 +44,9 @@ describe('file-storage', () => {
     });
     const file = read();
     expect(file).toEqual({
-      inbox: {},
+      modules: {
+        inbox: {},
+      },
       meta: {
         inbox: {
           lastId: 9999,
@@ -59,7 +59,9 @@ describe('file-storage', () => {
     const { read, write } = dataAccess(join(__dirname, '.tomate.test.json'));
     // create file
     write({
-      inbox: {},
+      modules: {
+        inbox: {},
+      },
       meta: {
         inbox: {
           lastId: 9999,
@@ -69,7 +71,9 @@ describe('file-storage', () => {
 
     // overwrite
     write({
-      inbox: {},
+      modules: {
+        inbox: {},
+      },
       meta: {
         inbox: {
           lastId: 5555,
@@ -78,7 +82,9 @@ describe('file-storage', () => {
     });
 
     expect(read()).toEqual({
-      inbox: {},
+      modules: {
+        inbox: {},
+      },
       meta: {
         inbox: {
           lastId: 5555,

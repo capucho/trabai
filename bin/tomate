@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs');
-const { task }  = require('../lib/index')
+const { task }  = require('../lib/index');
+const menuOptions = ['inbox', 'waiting', 'maybe'];
 
 const argv = yargs.usage('Usage: <command> [options]')
     .usage('Menu options are: inbox, waiting, maybe')
@@ -13,6 +14,7 @@ const argv = yargs.usage('Usage: <command> [options]')
             yargs.positional('menu', {
                 describe: 'Read your task menu',
                 type: 'string',
+                choices: menuOptions
             })
         },
         handler: (args) => {
@@ -26,6 +28,7 @@ const argv = yargs.usage('Usage: <command> [options]')
             yargs.positional('menu', {
                 describe: 'Add to your task menu',
                 type: 'string',
+                choices: menuOptions
             })
             yargs.positional('task', {
                 describe: 'Add to your task menu',
@@ -38,12 +41,13 @@ const argv = yargs.usage('Usage: <command> [options]')
         }
     }).command({
         command: 'remove <menu> <task>',
-        aliases: ['remove', 'r'],
+        aliases: ['remove', 'rm'],
         desc: 'Remove your tasks (by id)',
         builder: (yargs) => {
             yargs.positional('menu', {
                 describe: 'Add to your task menu',
                 type: 'string',
+                choices: menuOptions
             })
             yargs.positional('task', {
                 describe: 'Add to your task menu',

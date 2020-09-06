@@ -3,7 +3,7 @@ import type { Data, FileWriterBuilder, FileReaderBuilder, Reader, Writer } from 
 
 const createFile = (path: string) => {
   // first run, create the file
-  const fileBuffer = Buffer.from(JSON.stringify({ meta: { inbox: { lastId: 0 } }, inbox: {} }));
+  const fileBuffer = Buffer.from(JSON.stringify({ meta: {}, modules: {} }));
   write(path, fileBuffer);
 
   return fileBuffer;

@@ -4,18 +4,21 @@ import { dataAccess } from './file-storage';
 
 export interface Data {
   meta: Metadata;
-  inbox: MenuData;
+  modules: Modules;
+}
+export interface Modules {
+  [k: string]: Module;
 }
 
 export interface Metadata {
-  inbox: MenuMetadata;
+  [k: string]: ModuleMetadata;
 }
 
-export interface MenuMetadata {
+export interface ModuleMetadata {
   lastId: number;
 }
 
-export interface MenuData {
+export interface Module {
   [k: string]: string;
 }
 

@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "npm run format && npm run lint && tsc",
+    "build": "tsc",
     "test": "jest --silent",
     "test:watch": "jest --silent --watch",
     "lint": "eslint . --ext .ts",
