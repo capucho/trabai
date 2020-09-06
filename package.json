@@ -1,6 +1,6 @@
 {
   "name": "trabai",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Task manager, pomodoro CLI",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
