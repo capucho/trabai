@@ -24,3 +24,6 @@ trabai --help to get help
 
 `trabai remove inbox 1`
 
+## Data store
+
+To keep it simple, data is stored in a `.trabai.json` file in the user root folder (resolved from os.homedir() in node).
